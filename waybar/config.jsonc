@@ -1,0 +1,81 @@
+// -*- mode: jsonc -*-
+{
+    "height": 20, // Waybar height (to be removed for auto height)
+    "spacing": 6, // Gaps between modules (4px)
+    "margin-left": 8,
+    "margin-right": 8,
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "network",
+	"bluetooth",
+	"pulseaudio",
+        "battery",
+        "clock",
+	"tray",
+	"custom/logout"
+    ],
+    "clock": {
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}",
+	"calendar": {
+	    "mode"          : "month",
+	    "format": {
+		    "months":     "<span color='#8aadf4'><b>{}</b></span>",
+		    "days":       "<span color='#cad3f5'><b>{}</b></span>",
+		    "weekdays":   "<span color='#eed49f'><b>{}</b></span>",
+		    "today":      "<span color='#ed8796'><b><u>{}</u></b></span>"
+	    }
+	}
+    },
+    "battery": {
+        "states": {
+	    "full": 99,
+            "good": 95,
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󱐋",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        "format-wifi": "Connected  ",
+        "format-ethernet": "Connected 󰈀",
+        "tooltip-format": "{ifname} via {essid} ",
+        "format-disconnected": "Disconnected ",
+        "tooltip-format-disconnected": "Disconnected  ",
+	"format-disabled": "Disabled ",
+	"tooltip-format-disabled": "Disabled ",
+	"on-click": "alacritty -e nmtui"
+    },
+    "bluetooth": {
+        "format-connected": "Connected 󰂯",
+        "format-on": "On 󰂯",
+        "format-off": "Off 󰂲",
+        "tooltip-format-off": "Off 󰂲",
+        "format-disabled": "Disabled 󰂲",
+        "tooltip-format-disabled": "Disabled 󰂲"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon}  {format_source}",
+        "format-muted": "  {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", "", ""]
+        }
+    },
+    "custom/logout": {
+        "format": "⏻",
+	"on-click": "rofi -show power -modi power:~/.config/rofi/scripts/powermenu.sh",
+	"tooltip": false
+    }
+}

@@ -1,0 +1,145 @@
+* {
+    font-family: CaskaydiaMono Nerd Font, Regular;
+    font-size: 12px;
+}
+
+window#waybar {
+    background-color: rgba(244, 219, 214, 0.0);
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* you can set a style on hover for any module like this */
+#pulseaudio:hover,
+#network:hover,
+#network.disconnected:hover,
+#bluetooth:hover,
+#bluetooth.off:hover,
+#bluetooth.disabled:hover,
+#battery:hover,
+#battery.warning:hover,
+#battery.critical:hover,
+#battery.full:hover,
+#battery.charging:hover,
+#clock:hover,
+#custom-logout:hover {
+    border: 1px solid #5b6078;
+    background-color: #24273a;
+    color: #cad3f5;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#workspaces button.active:hover,
+#workspaces button:hover {
+    background-color: #24273a;
+    border: 1px solid #5b6078;
+}
+
+#workspaces button.active {
+    color: #91d7e3;
+    border: 1px solid #91d7e3;
+}
+
+#workspaces button:hover label {
+    color: #cad3f5;
+}
+
+#workspaces button {
+    padding: 2px 6px;
+    border-radius: 16px;
+    margin: 4px 2px;
+}
+
+#custom-logout,
+#clock,
+#battery,
+#network,
+#bluetooth,
+#pulseaudio {
+    background-color: #181926;
+    border: 1px solid #1e2030;
+    padding: 0 10px;
+    border-radius: 16px;
+    margin: 4px 0px;
+}
+
+#workspaces {
+    background-color: #181926;
+    padding: 0 5px;
+    border: 1px solid #5b6078;
+    border-radius: 16px;
+}
+
+#pulseaudio {
+    color: #eed49f;
+}
+
+#network {
+    color: #91d7e3;
+}
+
+#network.disconnected,
+#bluetooth.disabled {
+    color: #ed8796;
+}
+
+#bluetooth {
+    color: #7dc4e4;
+}
+
+#bluetooth.off {
+    color: #f5a97f;
+}
+
+#battery {
+    color: #8aadf4;
+}
+
+#battery.warning {
+    color: #eed49f;
+}
+
+#battery.critical {
+    color: #ed8796;
+}
+
+#battery.charging {
+    color: #a6da95;
+}
+
+#battery.full {
+    color: #8aadf4;
+}
+
+#clock {
+    color: #c6a0f6;
+}
+
+#clock.tooltip {
+    color: #5b6078;
+}
+
+#custom-logout {
+    color: #f4dbd6;
+    padding-right: 12px;
+}
+
+tooltip {
+    background-color: #181926;
+    border: 1px solid #1e2030;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+

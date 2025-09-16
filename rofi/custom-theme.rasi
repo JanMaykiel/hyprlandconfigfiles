@@ -1,0 +1,130 @@
+* {
+	rosewater: #f4dbd6;
+	flamingo: #f0c6c6;
+	pink: #f5bde6; 
+	mauve: #c6a0f6; 
+	red: #ed8796; 
+	maroon: #ee99a0; 
+	peach: #f5a97f; 
+	yellow: #eed49f; 
+	green: #a6da95; 
+	teal: #8bd5ca; 
+	sky: #91d7e3; 
+	sapphire: #7dc4e4; 
+	blue: #8aadf4; 
+	lavander: #b7bdf8; 
+	text: #cad3f5; 
+	subtext1: #b8c0e0; 
+	subtext0: #a5adcb; 
+	overlay2: #939ab7; 
+	overlay1: #8087a2; 
+	overlay0: #6e738d; 
+	surface2: #5b6078; 
+	surface1: #494d64; 
+	surface0: #363a4f; 
+	base: #24273a; 
+	mantle: #1e2030; 
+	crust: #181926; 
+	transparent: rgba(0,0,0,0);
+	font: "CaskaydiaMono Nerd Font 12";
+}
+#window {
+    location: center;
+    anchor:   center;
+    transparency: "screenshot";
+    padding: 10px;
+    border:  0px;
+    border-radius: 10px;
+    color: @mauve;
+    background-color: transparent;
+    spacing: 0;
+    children:  [mainbox];
+    orientation: horizontal;
+}
+
+#mainbox {
+    background-color: inherit;
+    spacing: 0;
+    children: [ inputbar, message, listview ];
+}
+#inputbar {
+    color: @blue;
+    padding: 11px;
+    background-color: @crust;
+    border: 2px 2px 2px 2px;
+    border-radius:  15px 15px 0px 0px;
+    border-color: @base;
+    children: [ prompt, entry];
+}
+#entry {
+    border-radius: 8px;
+    padding: 8px;
+    background-color: @base;
+    text-font: inherit;
+    text-color: @sapphire;
+}
+#prompt {
+    margin:     0px 0.3em 0em 0em ;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: @base;
+    text-font: inherit;
+    text-color: @yellow;
+}
+#listview {
+    padding: 8px;
+    border-radius: 0px 0px 15px 15px;
+    border: 0px 2px 2px 2px;
+    border-color: @base;
+    background-color: @crust;
+    dynamic: true;
+    lines: 6;
+}
+#element {
+    padding: 2px;
+    vertical-align: 0.5;
+    border: 1px;
+    border-radius: 4px;
+    background-color: @crust;
+    color: @text;
+}
+#element-text {
+    padding: 4px;
+    background-color: @crust;
+    color: @rosewater;
+}
+#element-text selected {
+    border-radius: 4px;
+    background-color: @surface0;
+    text-color: @text;
+}
+#vertb {
+    expand: false;
+    children: [ dummy0, mode-switcher, dummy1  ];
+}
+#dummy0,  dummy1 {
+    expand: true;
+}
+
+#mode-switcher {
+    expand: false;
+    orientation: vertical;
+    spacing: 0px;
+    border: 0px 0px 0px 0px;
+}
+#button {
+    padding: 8px;
+    border: 2px 0px 2px 2px;
+    border-radius: 4px 0px 0px 4px;
+    background-color: @base;
+    border-color: @text;
+    color: @text;
+    horizontal-align: 0.5;
+}
+#button selected normal {
+    color: @base;
+    border: 2px 0px 2px 2px;
+    background-color: @subtext1;
+    border-color: @surface2;
+}
+
