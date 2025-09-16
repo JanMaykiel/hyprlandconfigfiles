@@ -70,11 +70,21 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git fzf)
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/fzf/key-bindings.zsh
 
 # User configuration
+# Custom binds
+fzf_nvim_cd() {
+  local dir
+  dir=$(find . -type d 2> /dev/null | fzf +m) || return
+  cd "$dir" || return
+  nvim .
+}
+
+bindkey -s '^[e' 'fzf_nvim_cd\n'  # ^[ = ESC = Alt
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
