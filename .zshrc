@@ -77,13 +77,13 @@ source /usr/share/fzf/key-bindings.zsh
 
 # User configuration
 # Custom binds
+# This changes directory using "Alt+e" and opens in neovim netrw
 fzf_nvim_cd() {
   local dir
   dir=$(find . -type d 2> /dev/null | fzf +m) || return
   cd "$dir" || return
   nvim .
 }
-
 bindkey -s '^[e' 'fzf_nvim_cd\n'  # ^[ = ESC = Alt
 
 # export MANPATH="/usr/local/man:$MANPATH"
